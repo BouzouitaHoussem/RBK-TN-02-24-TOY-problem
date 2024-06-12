@@ -27,5 +27,18 @@
 * bubbleSortTest([2, 1, 3]); // yields [1, 2, 3]
 */
 var bubbleSort = function (array) {
+  var counter=0
+  for(var i=0;i<array.length-1;i++){
+    if(array[i]>array[i+1]){
+      var aux=array[i]
+      array[i]=array[i+1]
+      array[i+1]=aux
+      counter++
+    }
+  }
+  if(counter===0){
+    return array
+  }
+  return bubbleSort(array)
   // Your code here.
 };
